@@ -1,12 +1,82 @@
+### Combined Gitignore for Python Data Science Projects (Fast Cookie)
+
+# =========================
+# 1. Project Specifics (Crucial)
+# =========================
+# NEVER track raw, interim, or processed data
+data_science/data/
+data_science/notebooks/.cache/
+
+# Ignore all experimental models...
+data_science/models/*
+*.pt
+*.onnx
+*.h5
+*.bin
+
+# ...BUT explicitly allow the final models you move to the root folder for deployment
+!models/
+!models/.gitkeep
+
+# =========================
+# 2. Environments & Secrets
+# =========================
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pixi/
+pyvenv.cfg
+.python-version
+
+# =========================
+# 3. Python Core
+# =========================
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
 
-# Distribution / packaging
+# =========================
+# 4. Data Science & Tooling
+# =========================
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+.jupyter/
+profile_default/
+ipython_config.py
+
+# Linting & Type Checking
+.ruff_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# =========================
+# 5. Build & Distribution
+# =========================
 .Python
 build/
 develop-eggs/
@@ -20,89 +90,55 @@ parts/
 sdist/
 var/
 wheels/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
+__pypackages__/
+cython_debug/
+.pypirc
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
-# Installer logs
+# =========================
+# 6. Logs & OS Files
+# =========================
 pip-log.txt
 pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
 *.log
-local_settings.py
-db.sqlite3
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-pyvenv.cfg
-
-# celery beat schedule file
-celerybeat-schedule
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
 
 # Mac OS
 .DS_Store
+
+# vim
+*.swp
+*.swo
+
+# =========================
+# 7. Framework Specifics
+# =========================
+# Django
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask
+instance/
+.webassets-cache
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Documentation
+docs/_build/
+docs/site/
+/site
+
+# IDEs
+.spyderproject
+.spyproject
+.ropeproject
