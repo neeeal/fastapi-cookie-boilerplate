@@ -116,9 +116,3 @@ You can also access the automatically generated API documentation at:
 ```text
 http://127.0.0.1:8000/docs
 ```
-
----
-
-## 🙏 Acknowledgements
-
-Thanks to Harish for the inspiration behind a FastAPI quickstart for Render and for providing sample code that helped shape this project.
