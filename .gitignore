@@ -4,7 +4,8 @@
 # 1. Project Specifics (Crucial)
 # =========================
 # NEVER track raw, interim, or processed data
-data_science/data/
+data_science/data/*/*
+!data_science/data/*/.gitkeep
 data_science/notebooks/.cache/
 
 # Ignore all experimental models...
